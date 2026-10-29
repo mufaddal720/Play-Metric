@@ -29,7 +29,7 @@ Do **not** describe the site as "hosted in the UAE" unless one of the UAE-region
    git push -u origin main
    ```
 3. On GitHub, open the repository's **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
-4. The included workflow (`.github/workflows/deploy-pages.yml`) runs the unit tests, builds, and publishes. When it finishes, the URL is shown in the **Actions** run, normally `https://<your-user>.github.io/uae-family-ai-game-day/`.
+4. The included workflow (`.github/workflows/deploy-pages.yml`) runs the unit tests, builds, and publishes. When it finishes, the URL is shown in the **Actions** run, normally `https://<your-user>.github.io/<repo>/` (this project: `https://mufaddal720.github.io/Play-Metric/`).
 5. Run the post-deployment checklist below, then add the tested URL to the README.
 
 GitHub Pages cannot set custom response headers, so the CSP in `public/_headers` is not applied there. The app works without it. For the strict headers, use Cloudflare Pages or Netlify.

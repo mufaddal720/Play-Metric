@@ -6,13 +6,13 @@ export function formatUaeDateTime(iso: string | number | Date, locale = 'en-AE')
   return new Intl.DateTimeFormat(locale, {
     timeZone: UAE_TIMEZONE,
     year: 'numeric', month: 'short', day: 'numeric',
-    hour: '2-digit', minute: '2-digit', hour12: false,
+    hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
   }).format(d) + ' GST';
 }
 
 export function formatUaeTime(iso: string | number | Date, locale = 'en-AE'): string {
   return new Intl.DateTimeFormat(locale, {
-    timeZone: UAE_TIMEZONE, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false,
+    timeZone: UAE_TIMEZONE, hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',
   }).format(new Date(iso));
 }
 

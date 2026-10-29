@@ -7,7 +7,7 @@ import { UAE_TIMEZONE } from '../lib/time';
 function UaeClock() {
   const [now, setNow] = useState(() => new Date());
   useEffect(() => { const i = setInterval(() => setNow(new Date()), 15000); return () => clearInterval(i); }, []);
-  const txt = new Intl.DateTimeFormat('en-AE', { timeZone: UAE_TIMEZONE, hour: '2-digit', minute: '2-digit', weekday: 'short', hour12: false }).format(now);
+  const txt = new Intl.DateTimeFormat('en-AE', { timeZone: UAE_TIMEZONE, hour: '2-digit', minute: '2-digit', weekday: 'short', hourCycle: 'h23' }).format(now);
   return <span title="Asia/Dubai (GST, UTC+4)" className="tabular-nums">{txt} GST</span>;
 }
 
