@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body, #root { min-height: 100%; }
+body {
+  @apply bg-ink-900 text-white antialiased;
+  font-feature-settings: 'tnum' 1;
+  background-image:
+    radial-gradient(1200px 500px at 110% -10%, rgba(0, 132, 61, 0.18), transparent 60%),
+    radial-gradient(900px 400px at -10% 0%, rgba(228, 0, 43, 0.12), transparent 60%);
+  background-attachment: fixed;
+}
+:focus-visible { outline: 3px solid #00843D; outline-offset: 2px; border-radius: 6px; }
+.flag-bar { background: linear-gradient(90deg, #E4002B 0 22%, #00843D 22% 48%, #FFFFFF 48% 74%, #0B0B0C 74% 100%); }
+.card { @apply rounded-2xl border border-ink-600 bg-ink-800/80 backdrop-blur; }
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-semibold transition disabled:cursor-not-allowed disabled:opacity-40 min-h-[44px]; }
+.btn-primary { @apply btn bg-uae-green text-white hover:bg-[#00964a]; }
+.btn-danger { @apply btn bg-uae-red text-white hover:bg-[#ff1a45]; }
+.btn-ghost { @apply btn border border-ink-500 bg-ink-700 text-white hover:bg-ink-600; }
+.btn-light { @apply btn bg-white text-ink-900 hover:bg-sand-100; }
+.input { @apply w-full rounded-xl border border-ink-500 bg-ink-900 px-3 py-2.5 text-white placeholder:text-ink-300 min-h-[44px]; }
+.label { @apply mb-1 block text-sm font-medium text-ink-200; }
+.chip { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+.rec-dot { @apply inline-block h-2.5 w-2.5 rounded-full bg-uae-red; animation: pulse 1.2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: .25 } }
+.mirror { transform: scaleX(-1); }
+[dir='rtl'] .rtl-flip { transform: scaleX(-1); }
